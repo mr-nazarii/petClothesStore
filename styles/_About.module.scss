@@ -56,15 +56,6 @@
   }
 
   .aboutParagraph {
-    flex: 1;
-    max-width: 467px;
-    font-size: 20px;
-    line-height: 34px;
-    color: $white;
-    z-index: 1;
-    margin: 20px;
-    @media (min-width: 891px) {
-      font-size: 25px;
-    }
+    @include paragraph;
   }
 }

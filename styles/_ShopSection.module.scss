@@ -1,0 +1,21 @@
+@import "mixins.scss";
+@import "colors.scss";
+
+.shopSection {
+  @include section($gray);
+  flex-direction: column;
+  gap: 10px;
+
+  .button {
+    @include button;
+  }
+
+  .paragraph {
+    text-align: center;
+    @include paragraph;
+  }
+
+  .img {
+    filter: grayscale(100%) brightness(45%);
+  }
+}

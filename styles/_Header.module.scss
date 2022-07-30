@@ -57,16 +57,6 @@
   }
 
   .button {
-    display: inline-block;
-    font-size: 16px;
-    line-height: 28px;
-    color: $red;
-    padding: 11px 27px;
-    font-weight: bolder;
-    background-color: $white;
-
-    @media (min-width: 440px) {
-      font-size: 18px;
-    }
+    @include button;
   }
 }
