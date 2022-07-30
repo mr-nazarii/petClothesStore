@@ -1,0 +1,72 @@
+@import "mixins.scss";
+@import "colors.scss";
+
+.header {
+  @include section($headerBgColor);
+  .img {
+    z-index: 0;
+    object-position: center center;
+    @media (min-width: 553px) {
+      object-position: center -100px;
+    }
+  }
+}
+
+.wrapper {
+  z-index: 1;
+  padding: 92px 0px;
+  flex: 1;
+  max-width: 531px;
+  margin: 0px 10px;
+  color: $white;
+  text-transform: uppercase;
+  background: $black;
+  border: 10px solid $white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 17px;
+
+  @media (min-width: 580px) {
+    gap: 28px;
+  }
+
+  .subtitle {
+    letter-spacing: 5px;
+    font-size: 20px;
+    line-height: 34px;
+    border-bottom: 4px solid $white;
+    margin: 0;
+    @media (min-width: 440px) {
+      font-size: 25px;
+    }
+  }
+
+  .title {
+    letter-spacing: 10px;
+    font-size: 30px;
+    line-height: 90px;
+    margin: 0;
+    @media (min-width: 440px) {
+      font-size: 40px;
+    }
+    @media (min-width: 580px) {
+      font-size: 65px;
+    }
+  }
+
+  .button {
+    display: inline-block;
+    font-size: 16px;
+    line-height: 28px;
+    color: $red;
+    padding: 11px 27px;
+    font-weight: bolder;
+    background-color: $white;
+
+    @media (min-width: 440px) {
+      font-size: 18px;
+    }
+  }
+}
