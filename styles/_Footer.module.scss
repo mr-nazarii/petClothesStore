@@ -1,0 +1,21 @@
+@import "mixins.scss";
+@import "colors.scss";
+
+.footer {
+  @include section($gray);
+  flex-direction: column;
+  gap: 10px;
+
+  .sectionTitle {
+    @include sectionTitle;
+    margin-bottom: 20px;
+  }
+
+  .linksWrapper {
+    margin-top: 20px;
+    gap: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

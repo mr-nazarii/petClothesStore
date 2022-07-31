@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import styles from "../styles/_About.module.scss";
+import styles from "../../styles/_About.module.scss";
 
 export const About = () => {
   return (
@@ -8,7 +8,7 @@ export const About = () => {
       <div className={styles.imgWrapper}>
         <Image
           alt="dog"
-          src={"/images/dogAbout.jpg"}
+          src={"/images/aboutPage/dogAbout.jpg"}
           layout="fill"
           objectFit="cover"
           className={styles.img}

@@ -1,13 +1,13 @@
 import Image from "next/image";
 import React from "react";
-import styles from "../styles/_Header.module.scss";
+import styles from "../../styles/_Header.module.scss";
 
 export const Header = () => {
   return (
     <div className={styles.header}>
       <Image
         alt="dog"
-        src={"/images/dogHeader.jpg"}
+        src={"/images/aboutPage/dogHeader.jpg"}
         layout="fill"
         objectFit="cover"
         className={styles.img}

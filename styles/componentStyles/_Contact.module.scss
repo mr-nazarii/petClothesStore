@@ -1,0 +1,26 @@
+@import "../mixins.scss";
+@import "../colors.scss";
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .contact {
+    font-size: 18px;
+    line-height: 34px;
+    text-align: center;
+    color: $white;
+    margin: 9px;
+
+    @media (min-width: 424px) {
+      font-size: 25px;
+    }
+  }
+
+  .img {
+    position: relative;
+    top: -4px;
+    width: 34px;
+    height: 34px;
+  }
+}

@@ -1,13 +1,13 @@
 import Image from "next/image";
 import React from "react";
-import styles from "../styles/_ShopSection.module.scss";
+import styles from "../../styles/_ShopSection.module.scss";
 
 export const ShopSection = () => {
   return (
     <div className={styles.shopSection}>
       <Image
         alt="dog"
-        src={"/images/dogShop.jpg"}
+        src={"/images/aboutPage/dogShop.jpg"}
         layout="fill"
         objectFit="cover"
         className={styles.img}
