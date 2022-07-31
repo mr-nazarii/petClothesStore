@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import styles from "../../styles/_ShopSection.module.scss";
 
@@ -15,9 +16,9 @@ export const ShopSection = () => {
       <p className={styles.paragraph}>
         Over 1000 of clothes for every taste, and size.
       </p>
-      <a href="#link" className={styles.button}>
-        TO THE SHOP
-      </a>
+      <Link href="/shop">
+        <a className={styles.button}>TO THE SHOP</a>
+      </Link>
     </div>
   );
 };

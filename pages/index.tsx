@@ -1,10 +1,8 @@
 import type { NextPage } from "next";
-import Head from "next/head";
-import Image from "next/image";
-import { About } from "../components/sections/About";
-import { Footer } from "../components/sections/Footer";
-import { Header } from "../components/sections/Header";
-import { ShopSection } from "../components/sections/ShopSection";
+import { About } from "../components/home/About";
+import { Footer } from "../components/home/Footer";
+import { Header } from "../components/home/Header";
+import { ShopSection } from "../components/home/ShopSection";
 
 const Home: NextPage = () => {
   return (

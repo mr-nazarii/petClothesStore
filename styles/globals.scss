@@ -1,3 +1,5 @@
+@import "colors.scss";
+
 html,
 body {
   padding: 0;
@@ -23,7 +25,7 @@ a {
   }
   body {
     color: #000000;
-    background: #ffffff;
+    background: $headerBgColor;
     font-family: "Lato", sans-serif;
   }
 }

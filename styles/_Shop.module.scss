@@ -1,0 +1,40 @@
+@import "mixins.scss";
+@import "colors.scss";
+
+.shop {
+  &__header {
+    display: flex;
+    background-color: #000000;
+    color: $white;
+    padding: 0px 26px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__filter {
+    background-color: $white;
+    margin: 107px 27px;
+    padding: 30px 53px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .select {
+    width: 100%;
+  }
+
+  .selectWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    span {
+      display: inline-block;
+      white-space: nowrap;
+    }
+  }
+}
