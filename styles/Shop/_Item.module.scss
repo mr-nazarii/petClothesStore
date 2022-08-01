@@ -1,0 +1,63 @@
+@import "../mixins.scss";
+@import "../colors.scss";
+
+.item {
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex: 1;
+  height: 100%;
+
+  &__img {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    object-position: top;
+  }
+}
+
+.details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+
+  &__title {
+    font-size: 22px;
+    line-height: 36px;
+    color: #000000;
+    font-weight: bold;
+    margin: 0px;
+    text-transform: uppercase;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.prices {
+  font-size: 18px;
+  line-height: 32px;
+  font-weight: bold;
+  display: flex;
+
+  &__old {
+    margin: 0px;
+    text-decoration-line: line-through;
+    color: #9f9f9f;
+  }
+
+  &__new {
+    margin: 0px 15px;
+    color: #d90000;
+  }
+}
+.button {
+  @include button($white, $red);
+  padding: 10px 17px 5px 17px;
+}

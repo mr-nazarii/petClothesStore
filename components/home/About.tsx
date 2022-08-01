@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import styles from "../../styles/_About.module.scss";
+import styles from "../../styles/Home/_About.module.scss";
 
 export const About = () => {
   return (

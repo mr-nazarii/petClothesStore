@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import styles from "../../styles/_Footer.module.scss";
+import styles from "../../styles/Home/_Footer.module.scss";
 import { Contacts } from "../Contacts";
 
 export const Footer = () => {

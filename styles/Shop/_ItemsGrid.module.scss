@@ -1,0 +1,9 @@
+@import "../mixins.scss";
+@import "../colors.scss";
+
+.gridWrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 410px));
+  justify-content: center;
+  gap: 20px;
+}
