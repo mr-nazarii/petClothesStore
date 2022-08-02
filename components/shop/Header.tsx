@@ -11,7 +11,11 @@ export const Header = () => {
           <h1>PET STYLE</h1>
         </a>
       </Link>
-      <Cart>0</Cart>
+      <Link href="cart">
+        <a>
+          <Cart>0</Cart>{" "}
+        </a>
+      </Link>
     </header>
   );
 };
