@@ -10,7 +10,7 @@ const shop = () => {
       <Header />
       <Filter />
       <ItemsGrid>
-        <Item />
+        <Item sale={true} />
         <Item />
         <Item />
         <Item />

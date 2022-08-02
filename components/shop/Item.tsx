@@ -2,10 +2,15 @@ import Image from "next/image";
 import React from "react";
 import styles from "../../styles/Shop/_Item.module.scss";
 
-export const Item = () => {
+interface ItemType {
+  sale?: boolean;
+}
+
+export const Item = ({ sale }: ItemType) => {
   return (
     <div className={styles.item}>
       <div className={styles.item__img}>
+        {sale ? <span className={styles.sale}>SALE</span> : null}
         <Image
           src={"/images/aboutPage/dogAbout.jpg"}
           layout="fill"
