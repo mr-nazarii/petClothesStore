@@ -6,9 +6,6 @@
   .img {
     z-index: 0;
     object-position: center center;
-    @media (min-width: 553px) {
-      object-position: center -100px;
-    }
   }
 }
 

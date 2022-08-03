@@ -3,6 +3,7 @@ import { Filter } from "../components/Filter";
 import { Header } from "../components/shop/Header";
 import { Item } from "../components/shop/Item";
 import { ItemsGrid } from "../components/shop/ItemsGrid";
+import { testRender } from "../data/renderdata.";
 
 const shop = () => {
   return (
@@ -10,10 +11,19 @@ const shop = () => {
       <Header />
       <Filter />
       <ItemsGrid>
-        <Item sale={true} />
-        <Item />
-        <Item />
-        <Item />
+        {testRender.map(
+          ({ id, title, price, src, sale = false, oldPrice = false }) => (
+            <Item
+              key={id}
+              id={id}
+              title={title}
+              price={price}
+              src={src}
+              sale={sale}
+              oldPrice={oldPrice}
+            />
+          )
+        )}
       </ItemsGrid>
     </>
   );
