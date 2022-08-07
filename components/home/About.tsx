@@ -4,7 +4,7 @@ import styles from "../../styles/Home/_About.module.scss";
 
 export const About = () => {
   return (
-    <div className={styles.about}>
+    <div id="about" className={styles.about}>
       <div className={styles.imgWrapper}>
         <Image
           alt="dog"

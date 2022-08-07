@@ -15,8 +15,12 @@ const itemSlice = createSlice({
       state.cart.itemsInCart = state.cart.itemsInCart + 1;
       state.cart.itemList.push(action.payload);
     },
+    buyItemsFromTheCart: (state: { cart: any }) => {
+      state.cart.itemList = [];
+      state.cart.itemsInCart = 0;
+    },
   },
 });
 
-export const { addToTheCart } = itemSlice.actions;
+export const { addToTheCart, buyItemsFromTheCart } = itemSlice.actions;
 export default itemSlice.reducer;

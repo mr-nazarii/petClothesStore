@@ -1,7 +1,8 @@
 import Image from "next/image";
 import React from "react";
 import { testRender } from "../../data/renderdata.";
-import { useAppSelector } from "../../hooks/hooks";
+import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
+import { buyItemsFromTheCart } from "../../store/slices/itemSlicer";
 import { RootState } from "../../store/store";
 import styles from "../../styles/Receipt/_Receipt.module.scss";
 import { ReciptItem } from "./ReciptItem";
@@ -11,6 +12,8 @@ export const ReceiptList = () => {
   const { itemList, itemsInCart } = useAppSelector(
     (state: RootState) => state.item.cart
   );
+
+  const dispatch = useAppDispatch();
 
   return (
     <div className={styles.receipt}>
@@ -38,7 +41,12 @@ export const ReceiptList = () => {
       )}
       <div className={styles.details}>
         {itemList.length > 0 ? (
-          <button className={styles.button}>Buy</button>
+          <button
+            onClick={() => dispatch(buyItemsFromTheCart())}
+            className={styles.button}
+          >
+            Buy
+          </button>
         ) : (
           <button className={styles.button} disabled>
             Buy
