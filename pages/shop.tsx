@@ -3,7 +3,6 @@ import { Filter } from "../components/Filter";
 import { Header } from "../components/shop/Header";
 import { Item } from "../components/shop/Item";
 import { ItemsGrid } from "../components/shop/ItemsGrid";
-import { testRender } from "../data/renderdata.";
 import { useAppSelector } from "../hooks/hooks";
 import { RootState } from "../store/store";
 

@@ -19,7 +19,7 @@ export const ReceiptList = () => {
       </p>
 
       {itemList.length > 0 ? (
-        itemList.map(({ id, title, price, src }) => {
+        itemList.map(({ id, title, price, src, sale }) => {
           amount += +price;
 
           return (
@@ -29,6 +29,7 @@ export const ReceiptList = () => {
               title={title}
               price={price}
               src={src}
+              sale={sale}
             />
           );
         })

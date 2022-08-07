@@ -57,6 +57,40 @@
   padding: 15px 25px;
   margin-bottom: 20px;
 
+  &__name {
+    position: relative;
+    width: 150px;
+    text-align: center;
+  }
+
+  &__sale {
+    background-color: $red;
+    color: $white;
+    padding: 5px;
+    position: relative;
+
+    &::before {
+      content: "SALE";
+      display: none;
+      position: absolute;
+      top: 10px;
+
+      background-color: $red;
+      padding: 5px;
+      color: $white;
+
+      @media (min-width: 499px) {
+        display: inline-block;
+        left: -46px;
+        top: 0px;
+      }
+    }
+  }
+
+  &__price {
+    padding: 5px;
+  }
+
   &:last-child {
     margin-bottom: 40px;
   }
