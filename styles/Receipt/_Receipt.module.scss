@@ -4,10 +4,27 @@
 .receipt {
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 60px 20px 20px 20px;
   background-color: $white;
   margin: 0px 40px;
   margin-bottom: 100px;
+  position: relative;
+
+  .noItems {
+    text-align: center;
+  }
+
+  .totalItems {
+    text-align: center;
+    background-color: $red;
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    padding: 10px;
+    left: 0px;
+    top: 0px;
+    color: $white;
+  }
 
   .details {
     display: flex;
@@ -64,4 +81,10 @@
 
 .button {
   @include button($white, $red);
+  border: none;
+
+  &:disabled,
+  &[disabled] {
+    @include button($white, rgb(251, 151, 151));
+  }
 }

@@ -5,7 +5,7 @@ import { Header } from "../components/shop/Header";
 const cart = () => {
   return (
     <>
-      <Header />
+      <Header shop={true} />
       <ReceiptList />
     </>
   );

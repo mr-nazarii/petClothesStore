@@ -8,19 +8,41 @@ import { ReciptItem } from "./ReciptItem";
 
 export const ReceiptList = () => {
   let amount = 0;
-  const { itemList } = useAppSelector((state: RootState) => state.item.cart);
+  const { itemList, itemsInCart } = useAppSelector(
+    (state: RootState) => state.item.cart
+  );
 
   return (
     <div className={styles.receipt}>
-      {itemList.map(({ id, title, price, src }) => {
-        amount += +price;
+      <p className={styles.totalItems}>
+        Total Items in the cart: {itemsInCart}
+      </p>
 
-        return (
-          <ReciptItem key={id} id={id} title={title} price={price} src={src} />
-        );
-      })}
+      {itemList.length > 0 ? (
+        itemList.map(({ id, title, price, src }) => {
+          amount += +price;
+
+          return (
+            <ReciptItem
+              key={Math.floor(id * Math.random() * Date.now())}
+              id={id}
+              title={title}
+              price={price}
+              src={src}
+            />
+          );
+        })
+      ) : (
+        <p className={styles.noItems}>No items in the cart</p>
+      )}
       <div className={styles.details}>
-        <a className={styles.button}>Buy</a>
+        {itemList.length > 0 ? (
+          <button className={styles.button}>Buy</button>
+        ) : (
+          <button className={styles.button} disabled>
+            Buy
+          </button>
+        )}
         <div className={styles.amount}>
           <p>Initial amount: ${Number(amount.toFixed(6))}</p>
           <p>Tax: $2,00</p>
