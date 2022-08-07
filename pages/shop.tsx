@@ -4,14 +4,17 @@ import { Header } from "../components/shop/Header";
 import { Item } from "../components/shop/Item";
 import { ItemsGrid } from "../components/shop/ItemsGrid";
 import { testRender } from "../data/renderdata.";
+import { useAppSelector } from "../hooks/hooks";
+import { RootState } from "../store/store";
 
-const shop = () => {
+const Shop = () => {
+  const { items } = useAppSelector((state: RootState) => state.item);
   return (
     <>
       <Header />
       <Filter />
       <ItemsGrid>
-        {testRender.map(
+        {items.map(
           ({ id, title, price, src, sale = false, oldPrice = false }) => (
             <Item
               key={id}
@@ -29,4 +32,4 @@ const shop = () => {
   );
 };
 
-export default shop;
+export default Shop;

@@ -1,5 +1,7 @@
 import Image from "next/image";
 import React from "react";
+import { useAppDispatch } from "../../hooks/hooks";
+import { addToTheCart } from "../../store/slices/itemSlicer";
 import styles from "../../styles/Shop/_Item.module.scss";
 
 interface ItemType {
@@ -12,6 +14,8 @@ interface ItemType {
 }
 
 export const Item = ({ sale, id, title, price, src, oldPrice }: ItemType) => {
+  const dispatch = useAppDispatch();
+
   return (
     <>
       {id && title && price && src ? (
@@ -38,7 +42,21 @@ export const Item = ({ sale, id, title, price, src, oldPrice }: ItemType) => {
               </div>
             </div>
 
-            <a className={styles.button}>
+            <a
+              className={styles.button}
+              onClick={() =>
+                dispatch(
+                  addToTheCart({
+                    sale: sale,
+                    id: id,
+                    src: src,
+                    title: title,
+                    price: price,
+                    oldPrice: oldPrice,
+                  })
+                )
+              }
+            >
               <Image
                 src={"/images/icons/Cart.svg"}
                 width="30"
