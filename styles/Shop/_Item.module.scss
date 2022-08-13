@@ -50,6 +50,14 @@
     justify-content: space-between;
     align-items: center;
   }
+
+  .color {
+    display: block;
+    width: 25px;
+    height: 25px;
+    border: 3px rgb(199, 199, 199) solid;
+    border-radius: 50%;
+  }
 }
 
 .prices {
@@ -57,6 +65,7 @@
   line-height: 32px;
   font-weight: bold;
   display: flex;
+  gap: 5px;
 
   &__old {
     margin: 0px;

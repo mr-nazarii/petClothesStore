@@ -11,9 +11,18 @@ interface ItemType {
   title: string;
   price: string;
   oldPrice?: string | boolean;
+  color: any[];
 }
 
-export const Item = ({ sale, id, title, price, src, oldPrice }: ItemType) => {
+export const Item = ({
+  sale,
+  id,
+  title,
+  price,
+  src,
+  oldPrice,
+  color,
+}: ItemType) => {
   const dispatch = useAppDispatch();
 
   return (
@@ -26,6 +35,17 @@ export const Item = ({ sale, id, title, price, src, oldPrice }: ItemType) => {
           </div>
           <div className={styles.details}>
             <div>
+              <div className={styles.prices}>
+                {color
+                  ? color.map((col: any) => (
+                      <span
+                        key={col}
+                        className={styles.color}
+                        style={{ backgroundColor: `${col}` }}
+                      />
+                    ))
+                  : null}
+              </div>
               <p className={styles.details__title}>{title}</p>
 
               <div className={styles.prices}>

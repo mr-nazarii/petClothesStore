@@ -8,13 +8,22 @@ import { RootState } from "../store/store";
 
 const Shop = () => {
   const { items } = useAppSelector((state: RootState) => state.item);
+
   return (
     <>
       <Header />
       <Filter />
       <ItemsGrid>
         {items.map(
-          ({ id, title, price, src, sale = false, oldPrice = false }) => (
+          ({
+            id,
+            title,
+            price,
+            src,
+            sale = false,
+            oldPrice = false,
+            color,
+          }) => (
             <Item
               key={id}
               id={id}
@@ -23,6 +32,7 @@ const Shop = () => {
               src={src}
               sale={sale}
               oldPrice={oldPrice}
+              color={color}
             />
           )
         )}

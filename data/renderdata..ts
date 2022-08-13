@@ -4,6 +4,7 @@ export const testRender = [
     title: "Sunny weather",
     price: "10.14",
     src: "/images/aboutPage/dogAbout.jpg",
+    color: ["yellow"],
   },
   {
     id: 2,
@@ -12,11 +13,13 @@ export const testRender = [
     oldPrice: "40.24",
     sale: true,
     src: "/images/aboutPage/dogHeader.jpg",
+    color: ["gray"],
   },
   {
     id: 3,
     title: "Beast weather",
     price: "30.54",
     src: "/images/aboutPage/dogShop.jpg",
+    color: ["yellow", "blue"],
   },
 ];
