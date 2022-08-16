@@ -5,12 +5,14 @@ export const filter = [
 ];
 
 export const colors = [
+  { value: "all", label: "All" },
   { value: "red", label: "Red" },
   { value: "green", label: "Green" },
-  { value: "Yellow", label: "Yellow" },
+  { value: "yellow", label: "Yellow" },
 ];
 
 export const size = [
+  { value: "all", label: "All" },
   { value: "xs", label: "XS" },
   { value: "s", label: "S" },
   { value: "m", label: "M" },

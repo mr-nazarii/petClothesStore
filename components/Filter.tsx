@@ -3,7 +3,7 @@ import Select from "react-select";
 import { colors, customStyles, filter, size } from "../data/filter.data";
 import styles from "../styles/componentStyles/_Filter.module.scss";
 
-export const Filter = () => {
+export const Filter = ({ setFilter, filterState }: any) => {
   return (
     <div className={styles.filter}>
       <div className={styles.selectWrapper}>
@@ -11,10 +11,16 @@ export const Filter = () => {
         <Select
           styles={customStyles}
           isSearchable={false}
-          defaultValue={filter[1]}
+          defaultValue={filter[0]}
           menuPosition="fixed"
           options={filter}
           className={styles.select}
+          onChange={(event) =>
+            setFilter({
+              ...filterState,
+              filter: event?.value,
+            })
+          }
         />
       </div>
       <div className={styles.selectWrapper}>
@@ -22,10 +28,16 @@ export const Filter = () => {
         <Select
           isSearchable={false}
           styles={customStyles}
-          defaultValue={colors[1]}
+          defaultValue={colors[0]}
           menuPosition="fixed"
           options={colors}
           className={styles.select}
+          onChange={(event) =>
+            setFilter({
+              ...filterState,
+              colors: event?.value,
+            })
+          }
         />
       </div>
 
@@ -34,10 +46,16 @@ export const Filter = () => {
         <Select
           styles={customStyles}
           isSearchable={false}
-          defaultValue={size[1]}
+          defaultValue={size[0]}
           menuPosition="fixed"
           options={size}
           className={styles.select}
+          onChange={(event) =>
+            setFilter({
+              ...filterState,
+              size: event?.value,
+            })
+          }
         />
       </div>
     </div>
