@@ -12,7 +12,7 @@ export const Filter = ({ setFilter, filterState }: any) => {
           styles={customStyles}
           isSearchable={false}
           defaultValue={filter[0]}
-          menuPosition="fixed"
+          menuPosition="absolute"
           options={filter}
           className={styles.select}
           onChange={(event) =>
@@ -29,7 +29,7 @@ export const Filter = ({ setFilter, filterState }: any) => {
           isSearchable={false}
           styles={customStyles}
           defaultValue={colors[0]}
-          menuPosition="fixed"
+          menuPosition="absolute"
           options={colors}
           className={styles.select}
           onChange={(event) =>
@@ -47,7 +47,7 @@ export const Filter = ({ setFilter, filterState }: any) => {
           styles={customStyles}
           isSearchable={false}
           defaultValue={size[0]}
-          menuPosition="fixed"
+          menuPosition="absolute"
           options={size}
           className={styles.select}
           isDisabled={true}

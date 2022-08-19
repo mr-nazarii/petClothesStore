@@ -85,18 +85,3 @@ const Shop = () => {
 };
 
 export default Shop;
-
-// shopItems.map(
-//   ({ id, title, price, src, sale = false, oldPrice = false, color }) => (
-//     <Item
-//       key={id}
-//       id={id}
-//       title={title}
-//       price={price}
-//       src={src}
-//       sale={sale}
-//       oldPrice={oldPrice}
-//       color={color}
-//     />
-//   )
-// );
