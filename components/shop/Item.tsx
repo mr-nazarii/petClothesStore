@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { useAppDispatch } from "../../hooks/hooks";
 import { addToTheCart } from "../../store/slices/itemSlicer";
@@ -23,8 +24,6 @@ export const Item = ({
   oldPrice,
   color,
 }: ItemType) => {
-  const dispatch = useAppDispatch();
-
   return (
     <>
       {id && title && price && src ? (
@@ -61,29 +60,25 @@ export const Item = ({
                 )}
               </div>
             </div>
-
-            <a
-              className={styles.button}
-              onClick={() =>
-                dispatch(
-                  addToTheCart({
-                    sale: sale,
-                    id: id,
-                    src: src,
-                    title: title,
-                    price: price,
-                    oldPrice: oldPrice,
-                  })
-                )
-              }
-            >
-              <Image
-                src={"/images/icons/Cart.svg"}
-                width="30"
-                height="30"
-                alt="cart"
-              />
-            </a>
+            <Link href={id.toString()}>
+              <a
+                className={styles.button}
+                // onClick={() =>
+                //   dispatch(
+                //     addToTheCart({
+                //       sale: sale,
+                //       id: id,
+                //       src: src,
+                //       title: title,
+                //       price: price,
+                //       oldPrice: oldPrice,
+                //     })
+                //   )
+                // }
+              >
+                DETAILS
+              </a>
+            </Link>
           </div>
         </div>
       ) : null}
