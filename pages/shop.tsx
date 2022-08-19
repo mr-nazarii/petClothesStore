@@ -17,27 +17,33 @@ const Shop = () => {
 
   const [shopItems, setShopItems] = useState(items);
 
+  const colors = (prevState: any, origin: any) => {
+    if (filter.colors === "all") {
+      setShopItems(prevState);
+    } else {
+      let colored = origin.filter((item: any) =>
+        item.color.includes(filter.colors)
+      );
+      setShopItems(colored);
+    }
+  };
+
   const renderItems = () => {
-    let copy = [...shopItems];
+    let copy = [...items];
+
+    let sale = copy.sort((a, b) => Number(a.sale) - Number(b.sale)).reverse();
 
     if (filter.filter === "sale") {
-      let sale = copy.sort((a, b) => Number(a.sale) - Number(b.sale)).reverse();
       setShopItems(sale);
-
-      if (filter.colors === "all") {
-        setShopItems(sale);
-      } else {
-        const newColor = copy.filter((el: any) =>
-          el.color.includes(filter.colors)
-        );
-        setShopItems(newColor);
-      }
+      colors(sale, copy);
     } else if (filter.filter == "low") {
-      copy.sort((a, b) => Number(a.price) - Number(b.price));
-      setShopItems(copy);
+      let sorted = copy.sort((a, b) => Number(a.price) - Number(b.price));
+      setShopItems(sorted);
+      colors(sorted, copy);
     } else if (filter.filter == "high") {
-      copy.sort((a, b) => Number(a.price) - Number(b.price));
-      setShopItems(copy.reverse());
+      let sorted = copy.sort((a, b) => Number(a.price) - Number(b.price));
+      setShopItems(sorted.reverse());
+      colors(sorted, copy);
     }
   };
 

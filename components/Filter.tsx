@@ -50,6 +50,7 @@ export const Filter = ({ setFilter, filterState }: any) => {
           menuPosition="fixed"
           options={size}
           className={styles.select}
+          isDisabled={true}
           onChange={(event) =>
             setFilter({
               ...filterState,
