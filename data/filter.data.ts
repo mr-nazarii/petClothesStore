@@ -9,6 +9,8 @@ export const colors = [
   { value: "red", label: "Red" },
   { value: "green", label: "Green" },
   { value: "yellow", label: "Yellow" },
+  { value: "lightskyblue", label: "Blue" },
+  { value: "white", label: "White" },
 ];
 
 export const size = [
