@@ -1,8 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { useAppDispatch } from "../../hooks/hooks";
-import { addToTheCart } from "../../store/slices/itemSlicer";
 import styles from "../../styles/Shop/_Item.module.scss";
 
 interface ItemType {
@@ -61,23 +59,7 @@ export const Item = ({
               </div>
             </div>
             <Link href={id.toString()}>
-              <a
-                className={styles.button}
-                // onClick={() =>
-                //   dispatch(
-                //     addToTheCart({
-                //       sale: sale,
-                //       id: id,
-                //       src: src,
-                //       title: title,
-                //       price: price,
-                //       oldPrice: oldPrice,
-                //     })
-                //   )
-                // }
-              >
-                DETAILS
-              </a>
+              <a className={styles.button}>DETAILS</a>
             </Link>
           </div>
         </div>

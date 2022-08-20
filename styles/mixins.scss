@@ -49,3 +49,30 @@
     font-size: 25px;
   }
 }
+
+@mixin price {
+  font-size: 18px;
+  line-height: 32px;
+  font-weight: bold;
+  display: flex;
+  gap: 5px;
+
+  &__old {
+    margin: 0px;
+    text-decoration-line: line-through;
+    color: #9f9f9f;
+  }
+
+  &__standard {
+    font-size: 18px;
+    line-height: 32px;
+    font-weight: bold;
+    margin: 0px;
+    color: #000000;
+  }
+
+  &__new {
+    margin: 0px 15px;
+    color: #d90000;
+  }
+}
