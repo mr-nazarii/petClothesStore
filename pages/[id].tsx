@@ -1,6 +1,8 @@
 import Image from "next/image";
 import React, { useState } from "react";
+import Select from "react-select";
 import { Header } from "../components/shop/Header";
+import { customStyles, sizeShop } from "../data/filter.data";
 import { testRender } from "../data/renderdata.";
 import { useAppDispatch } from "../hooks/hooks";
 import { addToTheCart } from "../store/slices/itemSlicer";
@@ -55,6 +57,7 @@ const DetailsPage = ({ itemData }: any) => {
                 if (el === item.color) {
                   return (
                     <span
+                      className={styles.color}
                       style={{ backgroundColor: el, borderColor: "#4f4f4f" }}
                       key={el}
                       onClick={() =>
@@ -69,6 +72,7 @@ const DetailsPage = ({ itemData }: any) => {
                   return (
                     <span
                       style={{ backgroundColor: el }}
+                      className={styles.color}
                       key={el}
                       onClick={() =>
                         setItem({
@@ -81,6 +85,22 @@ const DetailsPage = ({ itemData }: any) => {
                 }
               })}
             </div>
+            <Select
+              styles={customStyles}
+              isSearchable={false}
+              defaultValue={sizeShop[0]}
+              menuPosition="absolute"
+              options={sizeShop}
+              className={styles.select}
+              isDisabled={false}
+              onChange={(event) =>
+                setItem({
+                  ...item,
+                  color: event?.value,
+                })
+              }
+              menuPlacement="auto"
+            />
           </div>
           {itemData.oldPrice ? (
             <div className={styles.prices}>

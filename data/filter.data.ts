@@ -22,12 +22,25 @@ export const size = [
   { value: "xl", label: "XL" },
 ];
 
+export const sizeShop = [
+  { value: "xs", label: "XS" },
+  { value: "s", label: "S" },
+  { value: "m", label: "M" },
+  { value: "l", label: "L" },
+  { value: "xl", label: "XL" },
+];
+
 export const customStyles = {
   option: (provided: any, state: any) => ({
     ...provided,
     backgroundColor: state.isFocused ? "gainsboro" : "white",
     color: state.isSelected ? "black" : "gray",
     padding: 20,
+  }),
+
+  container: (base: any) => ({
+    ...base,
+    width: 150,
   }),
 
   singleValue: (provided: any, state: any) => {
